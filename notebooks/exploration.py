@@ -47,3 +47,12 @@ print("\n" + "=" * 50)
 print("Exploration terminee !")
 print("Prochain lab : entrainer un modele ML")
 print("=" * 50)
+
+# ===== REPARTITION PAR SEXE ET DIAGNOSTIC =====
+print(f"\n--- Patients par sexe et diagnostic ---")
+sexe_diag = df.groupby(["sexe", "diagnostic"]).size()
+# J'aurais pu ecrire print(sexe_diag) en une seule ligne, mais j'ai choisi
+# une boucle for pour que l'affichage soit coherent avec le reste du script 
+# et que ca soit plus lisible
+for (sexe, diag), count in sexe_diag.items():
+    print(f"  {sexe} - {diag:12s} : {count:3d} patients")
