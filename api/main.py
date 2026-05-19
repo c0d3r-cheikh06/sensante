@@ -5,12 +5,29 @@ from fastapi import FastAPI
 import joblib
 import numpy as np
 from pydantic import BaseModel, Field
+from fastapi.middleware.cors import CORSMiddleware
 
 # Créer l'application
 app = FastAPI(
     title="SenSante API",
     description="Assistant pré-diagnostic médical pour le Sénégal",
     version="0.2.0"
+)
+
+
+
+# Autoriser les requêtes depuis le frontend
+app.add_middleware(
+    CORSMiddleware,
+
+    # En développement : tout accepter
+    allow_origins=["*"],
+
+    allow_credentials=True,
+
+    allow_methods=["*"],
+
+    allow_headers=["*"],
 )
 
 # Route de base : vérifier que l'API fonctionne
@@ -174,3 +191,15 @@ def predict(patient: PatientInput):
         confiance=confiance,
         message=messages.get(diagnostic, "Consultez un medecin.")
     )
+
+
+@app.get("/model-info")
+def model_info():
+    """Informations sur le modèle chargé."""
+    return {
+        "type": type(model).__name__,          
+        "nombre_arbres": model.n_estimators,  
+        "classes": list(model.classes_),      
+        "nombre_features": model.n_features_in_ 
+    }
+
