@@ -1,29 +1,24 @@
-<<<<<<< HEAD
-# SenSante
-Assistant de pre - diagnostic medical pour le Senegal .
-## Description
-SenSante utilise le Machine Learning pour aider au
-pre - diagnostic des maladies courantes ( paludisme ,
-grippe , typhoide ) a partir des symptomes du patient .
-## Structure du projet
-- ` data / ` : Donnees patients ( CSV )
-- ` models / ` : Modele ML serialise
-- ` api / ` : API FastAPI
-- ` frontend / ` : Interface web
-- ` notebooks / ` : Scripts d'exploration
-## Auteur
-Cheikh Ahmed Tidiane Thiam - L2 GLSIB - ESP/ UCAD
-## Cours
-Integration de Modeles IA - Dr. El Hadji Bassirou TOURE
-=======
 ---
 title: Sensante
-emoji: 👁
+emoji: 🏥
 colorFrom: green
 colorTo: blue
 sdk: docker
 pinned: false
 ---
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
->>>>>>> 5f65c70f72afbd94003c9ba5353cfcf7d2ac2402
+# SenSante
+Assistant pré-diagnostic médical pour le Sénégal.
+
+## Demo en ligne
+https://c0d3r-cheikh06-sensante.hf.space
+
+## Stack
+- scikit-learn (modele ML)
+- FastAPI (API REST)
+- Tailwind CSS (frontend responsive)
+- Groq / Llama 3 (explication LLM)
+- Docker (conteneurisation)
+
+## Auteur
+Cheikh Ahmed Tidiane THIAM - L2 GLSI - ESP/UCAD - 2026
