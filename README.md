@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SenSante
 Assistant de pre - diagnostic medical pour le Senegal .
 ## Description
@@ -14,3 +15,15 @@ grippe , typhoide ) a partir des symptomes du patient .
 Cheikh Ahmed Tidiane Thiam - L2 GLSIB - ESP/ UCAD
 ## Cours
 Integration de Modeles IA - Dr. El Hadji Bassirou TOURE
+=======
+---
+title: Sensante
+emoji: 👁
+colorFrom: green
+colorTo: blue
+sdk: docker
+pinned: false
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+>>>>>>> 5f65c70f72afbd94003c9ba5353cfcf7d2ac2402

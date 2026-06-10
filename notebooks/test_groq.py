@@ -60,3 +60,27 @@ Explique ce resultat au patient."""}
 print("=== Explication SenSante ===")
 print(response2.choices[0].message.content)
 
+# Exercice 2 
+temperatures = [0.0, 0.5, 1.0]
+
+for temp in temperatures:
+    response = client.chat.completions.create(
+        model="llama-3.1-8b-instant",
+        messages=[
+            {"role": "system",
+             "content": """Tu es un assistant medical senegalais.
+Explique le resultat en francais simple.
+Maximum 3 phrases.
+Ne fais JAMAIS de diagnostic toi-meme."""},
+            {"role": "user",
+             "content": """Patient : Homme, 35 ans, region Thies
+Temperature : 38.2 C
+Diagnostic du modele : grippe (probabilite 55%)
+Explique ce resultat au patient."""}
+        ],
+        max_tokens=200,
+        temperature=temp
+    )
+    print(f"\n=== Temperature={temp} ===")
+    print(response.choices[0].message.content)
+    
